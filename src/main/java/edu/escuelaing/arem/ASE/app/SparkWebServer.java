@@ -1,14 +1,20 @@
 package edu.escuelaing.arem.ASE.app;
 
 
-import static spark.Spark.get;
-import static spark.Spark.port;
+import java.io.File;
+import java.io.FileInputStream;
+
+import static spark.Spark.*;
 
 public class SparkWebServer {
 
     public static void main(String... args){
+
+
+
         port(getPort());
-        get("hello", (req,res) -> "Hello Docker!");
+        staticFileLocation("/public");
+
 
         // matches "GET /hello/foo" and "GET /hello/bar"
         // request.params(":name") is 'foo' or 'bar'
@@ -16,42 +22,42 @@ public class SparkWebServer {
             return "Hello: " + request.params(":name");
         });
 
-        get("/cos/:number", (request, response) -> {
+       get("/cos/:number", (request, response) -> {
             String number= request.params(":number");
             double numberDouble= Double.valueOf(number);
-            System.out.println(numberDouble);
             double operation= Math.cos(Math.toRadians(numberDouble));
-
             return "The cos is: " + operation;
 
         });
 
+
+
         get("/sin/:number", (request, response) -> {
             String number= request.params(":number");
             double numberDouble= Double.valueOf(number);
-            System.out.println(numberDouble);
             double operation= Math.sin(Math.toRadians(numberDouble));
             return "The sin is: " + operation;
 
         });
 
 
-        get("/palindromo/:palabra", (request, response) -> {
-            boolean esPalindromo=false;
-            String palabraR= request.params(":palabra");
-            String cadenaInvertida = "";
-            for (int x = palabraR.length() - 1; x >= 0; x--)
-                cadenaInvertida = cadenaInvertida + palabraR.charAt(x);
-            if(cadenaInvertida.equals(palabraR)){
-                esPalindromo=true;
+        get("/palindrome/:palabra", (request, response) -> {
+            boolean isPalindrome=false;
+            String word= request.params(":palabra");
+            String invertedWord = "";
+            for (int x = word.length() - 1; x >= 0; x--)
+                invertedWord= invertedWord+ word.charAt(x);
+            if(invertedWord.equals(word)){
+                isPalindrome=true;
             }
-            return "La palabra es palindromo: " + esPalindromo;
+            return "The word is palindrome: " + isPalindrome;
 
         });
 
-        get("/palindromo/:palabra", (request, response) -> {
-
-            return "La palabra es palindromo: ";
+        get("/vector/:numberOne/:numberTwo", (request, response) -> {
+            double sum= Math.pow(Double.valueOf(request.params(":numberOne")), 2)+Math.pow( Double.valueOf(request.params("numberTwo")),2);
+            double sumRoot= Math.sqrt(sum);
+            return "the magnitude of the vector is: "+ sumRoot;
 
         });
 

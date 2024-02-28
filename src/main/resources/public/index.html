@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div>
+
+    <form  id="cosForm" onsubmit="return calculateCos();">
+        <h4>Cos</h4>
+        <input class="name" type="text" placeholder="enter a number" id="cosNumber"/>
+       <input class="sub" type="submit" value="Calculate" onclick="calculateCos()"/>
+        <p id="cosResult"></p>
+    </form>
+
+    <form  id="sinForm" onsubmit="return calculateSin();">
+        <h4>Sin</h4>
+        <input class="name" type="text" placeholder="enter a number" id="sinNumber"/>
+        <input class="sub" type="submit" value="Calculate" onclick="calculateSin()"/>
+        <p id="sinResult"></p>
+    </form>
+
+    <form  id="palForm" onsubmit="return checkPalindrome();">
+        <h4>Palindrome</h4>
+        <input class="name" type="text" placeholder="enter a word" id="palindromeId"/>
+        <input class="sub" type="submit" value="Check" onclick="checkPalindrome()"/>
+        <p id="palindromeResult"></p>
+    </form>
+
+    <form  id="VectorForm" onsubmit="return calculateVector();">
+        <h4>Vector</h4>
+        <input class="name" type="text" placeholder="enter a number" id="vectornumberOne"/>
+        <input class="pw" type="text" placeholder="enter a number" id="vectornumberTwo"/>
+        <input class="sub" type="submit" value="Calculate" onclick="calculateVector()"/>
+        <p id="vectorResult"></p>
+    </form>
+</div>
+
+<script src="./functions.js"></script>
+</body>
+</html>
