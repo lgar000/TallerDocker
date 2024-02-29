@@ -25,10 +25,10 @@ acceda a la carpeta principal del proyecto mediante el siguiente comando
 cd TallerDocker
 ```
 
-Para empaquetar el proyecto ejecute
+Para compilar y empaquetar, ejecute 
 
 ```
-mvn package
+mvn clean install
 ```
 ## Pruebas y funcionamiento
 
@@ -74,7 +74,7 @@ Con la palabra ana:
 
 ![palPuerto4567](https://github.com/lgar000/TallerDocker/blob/main/Imagenes/palindromePuerto4567.png)
 
-Con una palbra que no es palindromo
+Con una palabra que no es palindromo
 
 ![nopalPuerto4567](https://github.com/lgar000/TallerDocker/blob/main/Imagenes/noPalindromePuerto4567.png)
 
