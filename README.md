@@ -9,7 +9,7 @@ La finalidad del siguiente taller es comprender los conceptos básicos y funcion
 - Git
 - IDE
 - Docker
-- 
+
 ### Instalación
 
 Para hacer uso del proyecto clone el repositorio usando el siguiente comando
